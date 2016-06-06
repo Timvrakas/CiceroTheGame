@@ -13,9 +13,9 @@ public class CiceroGUI extends JFrame {
 	public CiceroGUI() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Cicero Game");
-		setSize(640, 400);
 		page = new Scene1(this);
 		this.add((JPanel)page);
+		pack();
 		setVisible(true);
 	}
 	
