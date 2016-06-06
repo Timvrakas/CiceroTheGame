@@ -80,7 +80,7 @@ public class Scene1 extends JPanel implements Scene {
 			public void run() {
 				fade -= 0.01;
 				repaint();
-				if(fade <= 0.0){
+				if(fade <= 0.01){
 					timer.cancel();
 					gui.nextScene(new Scene2(gui));
 				}
