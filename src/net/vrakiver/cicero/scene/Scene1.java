@@ -18,8 +18,9 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import net.vrakiver.cicero.CiceroGUI;
+import net.vrakiver.cicero.VideoPlayer;
 
-public class Scene1 extends JPanel implements Scene {
+public class Scene1 extends JPanel {
 	private static final long serialVersionUID = 1154083468816440589L;
 	CiceroGUI gui;
 	private BufferedImage image;
@@ -36,8 +37,6 @@ public class Scene1 extends JPanel implements Scene {
 			System.out.println("Could not find resources");
 			e1.printStackTrace();
 		}
-
-		
 
 		JButton next = new JButton();
 		next.setOpaque(false);
@@ -80,9 +79,9 @@ public class Scene1 extends JPanel implements Scene {
 			public void run() {
 				fade -= 0.01;
 				repaint();
-				if(fade <= 0.01){
+				if (fade <= 0.01) {
 					timer.cancel();
-					gui.nextScene(new Scene2(gui));
+				new VideoPlayer(new File("media/intro.mp4").toURI(), gui, new Scene2(gui));
 				}
 			}
 		}, 0, 8);
