@@ -49,7 +49,6 @@ public class VideoPlayer {
 		jfxPanel = new JFXPanel();
 
 		Platform.runLater(new Runnable() {
-			@Override
 			public void run() {
 				media = new Media(mediaURL);
 				player = new MediaPlayer(media);
@@ -61,7 +60,6 @@ public class VideoPlayer {
 				scene = new Scene(root, 1024, 576);
 				jfxPanel.setScene(scene);
 				player.setOnEndOfMedia(new Runnable() {
-					@Override
 					public void run() {
 						tearDownVideo();
 						gui.nextScene(nextScene);
@@ -93,7 +91,6 @@ public class VideoPlayer {
 		panel.remove(jfxPanel);
 
 		Platform.runLater(new Runnable() {
-			@Override
 			public void run() {
 				player.stop();
 				player.dispose();
@@ -103,7 +100,6 @@ public class VideoPlayer {
 				jfxPanel.setScene(null);
 				scene = null;
 				SwingUtilities.invokeLater(new Runnable() {
-					@Override
 					public void run() {
 						jfxPanel = null;
 					}
