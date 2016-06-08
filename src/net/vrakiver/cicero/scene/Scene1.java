@@ -8,7 +8,6 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -32,7 +31,7 @@ public class Scene1 extends JPanel {
 		super.setPreferredSize(new Dimension(1024, 768));
 		this.gui = gui;
 		try {
-			image = ImageIO.read(new File("media/1/1.png"));
+			image = ImageIO.read(Scene1.class.getResource("/res/1/1.png"));
 		} catch (IOException e1) {
 			System.out.println("Could not find resources");
 			e1.printStackTrace();
@@ -81,7 +80,7 @@ public class Scene1 extends JPanel {
 				repaint();
 				if (fade <= 0.01) {
 					timer.cancel();
-				new VideoPlayer(new File("media/intro.mp4").toURI(), gui, new Scene2(gui));
+				new VideoPlayer(ClassLoader.getSystemResource("res/intro.mp4"), gui, new Scene2(gui));
 				}
 			}
 		}, 0, 8);

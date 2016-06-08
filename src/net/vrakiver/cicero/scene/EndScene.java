@@ -5,7 +5,6 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -26,7 +25,7 @@ public class EndScene extends JPanel {
 		
 		
 		try {
-			image = ImageIO.read(new File("media/end.png"));
+			image = ImageIO.read(Scene1.class.getResource("/res/end.png"));
 		} catch (IOException e1) {
 			System.out.println("Could not find resources");
 			e1.printStackTrace();

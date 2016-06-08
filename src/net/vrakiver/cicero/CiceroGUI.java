@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import net.vrakiver.cicero.scene.Scene1;
+import net.vrakiver.cicero.scene.Scene3;
 
 public class CiceroGUI extends JFrame {
 	private static final long serialVersionUID = 3679551879916273308L;
@@ -17,7 +18,7 @@ public class CiceroGUI extends JFrame {
 		setTitle("Cicero Game");
 		this.setBackground(Color.BLACK);
 
-		page = new Scene1(this);
+		page = new Scene3(this);
 		this.add((JPanel) page);
 		pack();
 		setVisible(true);
@@ -28,6 +29,7 @@ public class CiceroGUI extends JFrame {
 		page = nextPage;
 		this.add(page,BorderLayout.CENTER);
 		this.validate();
+		this.repaint();
 	}
 
 	public static void main(String[] args) {
